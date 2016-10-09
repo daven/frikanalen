@@ -143,7 +143,7 @@ class WebmEncoder(FFmpegProcess, WorkingClass):
     extension = '.webm'
     def get_settings(self):
         return [
-            ('vcodec', 'libtheora',),
+            ('vcodec', 'vp8',),
             ('acodec', 'libvorbis',),
             ('qscale:v', '2'),
             ('qscale:a', '2'),
