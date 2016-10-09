@@ -138,6 +138,18 @@ class TheoraEncoder(FFmpegProcess, WorkingClass):
             ('vf', 'scale=720:-1'),
             ]
 
+class WebmEncoder(FFmpegProcess, WorkingClass):
+    job_type = 'webm'
+    extension = '.webm'
+    def get_settings(self):
+        return [
+            ('vcodec', 'libtheora',),
+            ('acodec', 'libvorbis',),
+            ('qscale:v', '2'),
+            ('qscale:a', '2'),
+            ('vf', 'scale=720:-1'),
+            ]
+
 class LargeThumbEncoder(ThumbEncoder, WorkingClass):
     job_type = 'large_thumb'
     resolution = '720:405'
